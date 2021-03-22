@@ -1,0 +1,16 @@
+@include pc{
+  .navbar{
+    &__item{
+    }
+  }
+}
+@include sp{
+  .navbar{
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    &__item{
+    }
+  }
+}

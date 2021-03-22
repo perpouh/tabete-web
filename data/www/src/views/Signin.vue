@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <layout>
     <input type="text" placeholder="メールアドレスもしくはユーザー名" class="input" v-model="email">
     <input type="password" placeholder="パスワード" class="input" v-model="password">
     <button class="button is-plain is-primary is-0 is-angle-right is-strong" @click="signin">送信</button>
-  </div>
+  </layout>
 </template>
 
 <script>
-// import Layout from "./layouts/NoSignLayout";
+import Layout from "@/layouts/Layout";
 export default {
   data() {
     return {
@@ -16,7 +16,7 @@ export default {
     };
   },
   components: {
-    // Layout,
+    Layout,
   },
   methods: {
     signin() {

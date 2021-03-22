@@ -4,6 +4,7 @@ import router from './router'
 import http from './http'
 
 import 'musubii/src/scss/musubii.scss'
+require('@/assets/scss/application.scss')
 
 const app = createApp(App)
 app.use(router)
