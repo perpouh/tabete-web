@@ -1,3 +1,9 @@
 @import 'reset.scss';
 @import 'mixin.scss';
 @import 'navbar.scss';
+
+@include pc{
+  .sp-only{
+    display:none;
+  }
+}
