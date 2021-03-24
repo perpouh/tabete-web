@@ -1,9 +1,9 @@
 <template>
   <ul class="navbar">
     <li class="navbar__item">
-      <a href="#">
+      <router-link to="/">
         <span class="navbar__item__icon"><font-awesome-icon icon="home"/></span><br class="sp-only"><span class="navbar__item__text">ホーム</span>
-      </a>
+      </router-link>
     </li>
     <li class="navbar__item">
       <a href="#">

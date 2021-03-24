@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import http from './http'
+import store from './stores'
 
 import 'musubii/src/scss/musubii.scss'
 require('@/assets/scss/application.scss')
@@ -20,6 +21,8 @@ library.add(
 )
 
 const app = createApp(App)
+app.config.globalProperties.$store = store;
 app.use(router)
 app.use(http);
+app.use(store);
 app.mount('#app')

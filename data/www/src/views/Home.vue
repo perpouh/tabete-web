@@ -1,18 +1,33 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <layout>
+    <article-list :articles="[]"></article-list>
+  </layout>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import Layout from "@/layouts/Layout";
+import ArticleList from "@/components/ArticleList"
 export default {
-  name: 'Home',
+  data() {
+    return {
+      articles: []
+    }
+  },
   components: {
-    HelloWorld
-  }
-}
+    Layout,
+    ArticleList
+  },
+  created(){
+    this.fetchData()
+  },
+  methods: {
+    fetchData(){
+      this.$http.get('/timeline')
+      .then(function(res){
+        console.log(res)
+        this.articles = res.data
+      }.bind(this))
+    }
+  },
+};
 </script>

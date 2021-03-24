@@ -6,10 +6,10 @@ export default {
       baseURL: process.env.VUE_APP_API_ENDPOINT,
       timeout: 10000,
     });
-    // http.interceptors.request.use((config) => {
-    //   config.headers = Vue.prototype.$stores.getters["auth/show"];
-    //   return config;
-    // });
+    http.interceptors.request.use((config) => {
+      config.headers = app.config.globalProperties.$store.getters["auth/show"];
+      return config;
+    });
     app.config.globalProperties.$http = http;
   }
 }

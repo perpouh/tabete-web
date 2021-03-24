@@ -8,6 +8,7 @@
 
 <script>
 import Layout from "@/layouts/Layout";
+import { mapMutations } from 'vuex'
 export default {
   data() {
     return {
@@ -19,6 +20,9 @@ export default {
     Layout,
   },
   methods: {
+    ...mapMutations('auth',[
+      'login'
+    ]),
     signin() {
       this.$http.post(`/auth/sign_in`, {email: this.email, password: this.password})
       .then(function(res){
